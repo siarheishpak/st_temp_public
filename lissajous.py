@@ -8,6 +8,7 @@ def show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase):
     y = y_amp * np.sin(y_freq * t + y_phase)
     fig, ax = plt.subplots()
     ax.plot(x, y, 'b-')
+    ax.axis('equal')
     return fig
 
 x_amp = st.slider("Amplitude of the first oscillation", 1, 10, 1)
