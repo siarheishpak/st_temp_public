@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 def show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase):
     t =  np.arange(0.00, 4*np.pi, 0.01)
     x = x_amp * np.sin(x_freq * t + x_phase)
-    y = y_phase * np.sin(y_freq * t + y_phase)
+    y = y_phase * np.cos(y_freq * t + y_phase)
     fig, ax = plt.subplots()
     ax.plot(x, y, 'b-')
     return fig
