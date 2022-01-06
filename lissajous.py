@@ -13,11 +13,10 @@ def show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase):
 
 if st.sidebar.checkbox("Show Lissajous Curve"):
     st.subheader("Lissajous curve")
-
-x_amp = st.slider("Amplitude of the first oscillation", 1, 10, 2)
-y_amp = st.slider("Amplitude of the second oscillation", 1, 10, 1)
-x_freq = st.slider("Frequency of the first oscillation", 1, 20, 4)
-y_freq = st.slider("Frequency of the second oscillation", 1, 20, 7)
-x_phase = st.slider("Initial phase of the first oscillation", 0.0, 2*np.pi, 0.0, 0.01)
-y_phase = st.slider("Initial phase of the second oscillation", 0.0, 2*np.pi, np.pi/2, 0.01)
-st.pyplot(show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase))
+    x_amp = st.sidebar.slider("Amplitude of the first oscillation", 1, 10, 2)
+    y_amp = st.sidebar.slider("Amplitude of the second oscillation", 1, 10, 1)
+    x_freq = st.sidebar.slider("Frequency of the first oscillation", 1, 20, 4)
+    y_freq = st.sidebar.slider("Frequency of the second oscillation", 1, 20, 7)
+    x_phase = st.sidebar.slider("Initial phase of the first oscillation", 0.0, 2*np.pi, 0.0, 0.01)
+    y_phase = st.sidebar.slider("Initial phase of the second oscillation", 0.0, 2*np.pi, np.pi/2, 0.01)
+    st.pyplot(show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase))
