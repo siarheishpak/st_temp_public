@@ -11,7 +11,7 @@ def show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase):
     ax.axis('equal')
     return fig
 
-if st.sidebar.checkbox("Show Lissajous Curve"):
+if st.sidebar.checkbox(label="Show Lissajous Curve", value=True):
     st.subheader("Lissajous curve")
     x_amp = st.sidebar.slider("Amplitude of the first oscillation", 1, 10, 2)
     y_amp = st.sidebar.slider("Amplitude of the second oscillation", 1, 10, 1)
