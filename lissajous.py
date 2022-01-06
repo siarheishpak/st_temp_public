@@ -9,7 +9,6 @@ def show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase):
     fig, ax = plt.subplots()
     ax.plot(x, y, 'b-') # 'b-' means solid blue line
     ax.axis('equal') # equal axis aspect ratio
-    ax.xlabel('x oscillation')
     return fig
 
 default_text = st.empty() # 'empty' element for the default text
