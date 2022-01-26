@@ -11,6 +11,9 @@ def show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase):
     ax.axis('equal') # equal axis aspect ratio
     return fig
 
+def close_matplotlib_figure(fig):
+    plt.close(fig)
+
 default_text = st.empty() # 'empty' element for the default text
 default_text.text("Select an option on the left menu") # this text will be shown if no checkboxes are selected on the left menu
 
@@ -30,5 +33,7 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
         lissajous_container = st.empty()
         while y_phase < (y_phase + np.pi):
             with lissajous_container:
-                st.pyplot(show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase))
-                y_phase += 0.05
+                fig = show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase)
+                st.pyplot(fig)
+                close_matplotlib_figure(fig)
+                y_phase += 0.25
