@@ -29,9 +29,16 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
 
     st.pyplot(show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase))
 
+    with st.container():
+        col1, col2 = st.columns(2)
+        with col1:
+            show = st.button("Show animation")
+        with col2:
+            hide = st.button("Hide animation")
+
     y_phase_i = y_phase
 
-    if st.button("Show animation"):
+    if show:
         lissajous_container = st.empty()
         while y_phase_i < (y_phase + np.pi):
             with lissajous_container:
