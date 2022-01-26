@@ -25,8 +25,7 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
     y_phase = st.sidebar.slider("Initial phase of the second oscillation", 0.0, 2*np.pi, np.pi/2, 0.01)
 
     lissajous_container = st.empty()
-    while y_phase < (y_phase + 2*np.pi):        
+    while y_phase < (y_phase + 2*np.pi):
         with lissajous_container:
             st.pyplot(show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase))
             y_phase += 0.01
-        lissajous_container.empty()
