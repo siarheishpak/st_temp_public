@@ -36,4 +36,4 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
                 fig = show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase)
                 st.pyplot(fig)
                 close_matplotlib_figure(fig)
-                y_phase += 0.25
+            y_phase += 0.25
