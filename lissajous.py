@@ -15,7 +15,7 @@ def close_matplotlib_figure(fig):
     plt.close(fig)
 
 default_text = st.empty() # 'empty' element for the default text
-default_text.text("Select an option on the left menu") # this text will be shown if no checkboxes are selected on the left menu
+default_text.text("Select an option on the left menu1") # this text will be shown if no checkboxes are selected on the left menu
 
 if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Curve will be shown only if checkbox is selected. The checkbox is shown on the sidebar.
     default_text.empty() # clear default text
