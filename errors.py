@@ -4,7 +4,7 @@ import os
 import pandas as pd
 import numpy as np
 from PIL import Image
-from lib import *
+# from lib import *
 
 ###################################
 #
