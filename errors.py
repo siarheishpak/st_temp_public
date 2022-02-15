@@ -215,7 +215,7 @@ if st.checkbox('UnicodeDecodeError'):
     raise UnicodeDecodeError('random_text', b"", 42, 43, 'Manually raised UnicodeDecodeError')
 
 if st.checkbox('UnicodeTranslateError'):
-    raise UnicodeTranslateError('random_text', b"", 42, 43, 'Manually raised UnicodeTranslateError')
+    raise UnicodeTranslateError('random_text', 42, 43, 'Manually raised UnicodeTranslateError')
 
 if st.checkbox('ValueError'):
     value_error = st.radio(
