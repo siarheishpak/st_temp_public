@@ -209,13 +209,13 @@ if st.checkbox('UnicodeError'):
     raise UnicodeError('Manually raised UnicodeError')
 
 if st.checkbox('UnicodeEncodeError'):
-    raise UnicodeEncodeError('Manually raised UnicodeEncodeError')
+    raise UnicodeEncodeError('random_text', u"", 42, 43, 'Manually raised UnicodeEncodeError')
 
 if st.checkbox('UnicodeDecodeError'):
-    raise UnicodeDecodeError('Manually raised UnicodeDecodeError')
+    raise UnicodeDecodeError('random_text', b"", 42, 43, 'Manually raised UnicodeDecodeError')
 
 if st.checkbox('UnicodeTranslateError'):
-    raise UnicodeTranslateError('Manually raised UnicodeTranslateError')
+    raise UnicodeTranslateError('random_text', b"", 42, 43, 'Manually raised UnicodeTranslateError')
 
 if st.checkbox('ValueError'):
     value_error = st.radio(
