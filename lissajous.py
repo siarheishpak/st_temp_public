@@ -36,7 +36,8 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
         with col2:
             hide = st.button("Hide animation")
 
-    y_phase_i = st.session_state.y_phase_key
+    y_phase_i = y_phase
+
     if show:
         lissajous_container = st.empty()
         while y_phase_i < (y_phase + np.pi):
