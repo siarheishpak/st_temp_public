@@ -25,7 +25,7 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
     x_freq = st.sidebar.slider("Frequency of the first oscillation", 1, 20, 4)
     y_freq = st.sidebar.slider("Frequency of the second oscillation", 1, 20, 7)
     x_phase = st.sidebar.slider("Initial phase of the first oscillation", 0.0, 2*np.pi, 0.0, 0.01)
-    y_phase = st.sidebar.slider("Initial phase of the second oscillation", 0.0, 2*np.pi, np.pi/2, 0.01)
+    y_phase = st.sidebar.slider("Initial phase of the second oscillation", 0.0, 2*np.pi, np.pi/2, 0.01, key='y_phase_key')
 
     st.pyplot(show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase))
 
@@ -36,8 +36,7 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
         with col2:
             hide = st.button("Hide animation")
 
-    y_phase_i = y_phase
-
+    y_phase_i = st.session_state.y_phase_key
     if show:
         lissajous_container = st.empty()
         while y_phase_i < (y_phase + np.pi):
