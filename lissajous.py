@@ -51,6 +51,7 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
 
 t =  np.arange(0.00, 2*np.pi, 0.01)
 y = y_amp * np.sin(2 * t)
-fig, ax = plt.subplots()
+fig1, ax1 = plt.subplots()
 ax.plot(t, y, 'b-') # 'b-' means solid blue line
 ax.axis('equal') # equal axis aspect ratio
+st.pyplot(fig1)
