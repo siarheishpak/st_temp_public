@@ -40,7 +40,9 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
         y_phase_i = y_phase
         progress_bar = st.progress(0.0) # to show progress bar
         lissajous_container = st.empty()
-        period = round(2*np.pi/min(x_freq, y_freq), 2) # period of the 2nd oscillation
+        min_freq = min(x_freq, y_freq)
+        period = round(2 * np.pi / min_freq, 2) # period of the animation
+        step = round(0.01 * period / (2* np.pi), 2) # step of phase changing in animation
         while y_phase_i < (y_phase + period):
             progress_value = round((y_phase_i - y_phase) / period, 2)
             progress_bar.progress(progress_value)
@@ -48,4 +50,4 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
                 fig = show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase_i)
                 st.pyplot(fig)
                 close_matplotlib_figure(fig)
-            y_phase_i += 0.01
+            y_phase_i += step
