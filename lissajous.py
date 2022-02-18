@@ -47,12 +47,4 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
                 st.pyplot(fig)
                 close_matplotlib_figure(fig)
             y_phase_i += 0.01
-            progress_bar.progress((y_phase_i - y_phase) / np.pi)
-
-x =  np.arange(0.00, 2*np.pi, 0.01)
-y = np.sin(2 * x)
-y1 = np.sin(x)
-fig1, ax = plt.subplots()
-ax.plot(x, y, 'b-', x, y1, 'r.') # 'b-' means solid blue line
-ax.axis('equal') # equal axis aspect ratio
-st.pyplot(fig1)
+            progress_bar.progress((y_phase_i - y_phase) / np.pi
