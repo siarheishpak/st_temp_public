@@ -40,6 +40,7 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
         y_phase_i = y_phase
         progress_bar = st.progress(0.0)
         lissajous_container = st.empty()
+#        period = round()
         while y_phase_i < (y_phase + np.pi):
             with lissajous_container:
                 fig = show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase_i)
@@ -47,3 +48,9 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
                 close_matplotlib_figure(fig)
             y_phase_i += 0.01
             progress_bar.progress((y_phase_i - y_phase) / np.pi)
+
+t =  np.arange(0.00, 2*np.pi, 0.01)
+y = y_amp * np.sin(2 * t)
+fig, ax = plt.subplots()
+ax.plot(t, y, 'b-') # 'b-' means solid blue line
+ax.axis('equal') # equal axis aspect ratio
