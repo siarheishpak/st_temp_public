@@ -53,6 +53,6 @@ x =  np.arange(0.00, 2*np.pi, 0.01)
 y = np.sin(2 * x)
 y1 = np.sin(x)
 fig1, ax = plt.subplots()
-ax.plot(x, y, y1 'b-') # 'b-' means solid blue line
+ax.plot(x, y, y1, 'b-') # 'b-' means solid blue line
 ax.axis('equal') # equal axis aspect ratio
 st.pyplot(fig1)
