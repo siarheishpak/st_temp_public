@@ -36,9 +36,9 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
         with col2:
             hide = st.button("Hide animation")
 
-    y_phase_i = y_phase
-
     if show:
+        y_phase_i = y_phase
+        progress_bar = st.progress(0.0)
         lissajous_container = st.empty()
         while y_phase_i < (y_phase + np.pi):
             with lissajous_container:
@@ -46,3 +46,4 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
                 st.pyplot(fig)
                 close_matplotlib_figure(fig)
             y_phase_i += 0.01
+            progress_bar.progress(y_phase_i / np.pi)
