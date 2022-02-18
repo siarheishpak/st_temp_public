@@ -40,7 +40,7 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
         y_phase_i = y_phase
         progress_bar = st.progress(0.0) # to show progress bar
         lissajous_container = st.empty()
-        period = round(2*np.pi/y_freq, 2) # period of the 2nd oscillation
+        period = round(2*np.pi/min(x_freq, y_freq), 2) # period of the 2nd oscillation
         while y_phase_i < (y_phase + period):
             progress_value = round((y_phase_i - y_phase) / period, 2)
             progress_bar.progress(progress_value)
