@@ -41,11 +41,11 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
         progress_bar = st.progress(0.0) # to show progress bar
         lissajous_container = st.empty()
         period = round(2*np.pi/y_freq, 2) # period of the 2nd oscillation
+        progress_value = round((y_phase_i - y_phase) / period, 2)
+        progress_bar.progress(progress_value)
         while y_phase_i < (y_phase + period):
             with lissajous_container:
                 fig = show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase_i)
                 st.pyplot(fig)
                 close_matplotlib_figure(fig)
             y_phase_i += 0.01
-            progress_value = round((y_phase_i - y_phase) / period, 2)
-            progress_bar.progress(progress_value)
