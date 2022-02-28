@@ -8,4 +8,6 @@ ram = st.slider(
     step=1
 )
 
-str = ' ' * bytearray(ram * 1000000)
+megaram = ram * 10000000
+
+str = ' ' * bytearray(megaram)
