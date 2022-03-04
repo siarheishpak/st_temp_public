@@ -12,5 +12,5 @@ ax.plot(t, sp, 'b-') # 'b-' means solid blue line
 ax.axis('equal') # equal axis aspect ratio
 st.pyplot(fig)
 
-data = pd.DataFrame(sp)
+data = pd.DataFrame(t)
 st.line_chart(data)
