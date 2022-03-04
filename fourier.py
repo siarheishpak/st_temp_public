@@ -14,4 +14,4 @@ st.pyplot(fig)
 
 data = pd.DataFrame(t)
 st.line_chart(data)
-st.write(sp)
+print(sp)
