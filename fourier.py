@@ -6,7 +6,7 @@ t = np.arange(32)
 sp = np.fft.fft(np.sin(t))
 freq = np.fft.fftfreq(t.shape[-1])
 # plt.plot(freq, sp.real, freq, sp.imag)
-#fig = plt.plot(freq, sp.real, freq, sp.imag)
-#st.pyplot(fig)
-print(freq)
-#st.write(freq)
+fig, ax = plt.subplots()
+ax.plot(t, sp, 'b-') # 'b-' means solid blue line
+ax.axis('equal') # equal axis aspect ratio
+st.pyplot(fig)
