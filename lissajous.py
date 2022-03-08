@@ -51,4 +51,4 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
                 st.pyplot(fig)
                 close_matplotlib_figure(fig)
             y_phase_i += step
-            progress_value += step
+            progress_value += 0.01
