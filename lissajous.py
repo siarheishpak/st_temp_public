@@ -15,9 +15,6 @@ def show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase):
 def close_matplotlib_figure(fig):
     plt.close(fig)
 
-def get_lcm(a, b): # return The Least Common Multiple of a and b
-    return abs(a * b) // math.gcd(a, b)
-
 default_text = st.empty() # 'empty' element for the default text
 default_text.text("Select an option on the left menu") # this text will be shown if no checkboxes are selected on the left menu
 
@@ -44,7 +41,7 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
         y_phase_i = y_phase
         progress_bar = st.progress(0.0) # to show progress bar
         lissajous_container = st.empty()
-        period = 2 * np.pi * get_lcm(1/x_freq, 1/y_freq) # period of the lissajous curve is a period of animation
+        period = 2 * np.pi / math.gcd(x_freq, y_freq) # period of the lissajous curve is a period of animation
         step = 0.01 * period # step of phase changing in animation
         while y_phase_i < (y_phase + period):
             progress_value = round((y_phase_i - y_phase) / period, 2)
