@@ -39,12 +39,13 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
 
     if show:
         y_phase_i = y_phase
-        progress_bar = st.progress(0.0) # to show progress bar
+        progress_value = 0.0
+        progress_bar = st.progress(progress_value) # to show progress bar
         lissajous_container = st.empty()
-        period = 2 * np.pi / math.gcd(x_freq, y_freq) # period of the lissajous curve is a period of animation
+        period = 2 * np.pi // math.gcd(x_freq, y_freq) # period of the lissajous curve is a period of animation
         step = 0.01 * period # step of phase changing in animation
         while y_phase_i < (y_phase + period):
-            progress_value = round((y_phase_i - y_phase) / period, 2)
+            progress_value += step
             progress_bar.progress(progress_value)
             with lissajous_container:
                 fig = show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase_i)
