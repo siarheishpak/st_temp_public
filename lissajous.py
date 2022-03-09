@@ -42,10 +42,10 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
                 step=1,
                 help='The higher value, the quicker animation'
             )
-        with col2:
-            hide = st.button("Hide animation")
 
     if show:
+        with col2:
+            hide = st.button("Hide animation")
         y_phase_i = y_phase
         progress_value = 0.0
         progress_bar = st.progress(progress_value) # to show progress bar
