@@ -45,7 +45,7 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
 
     if show:
         with col2:
-            hide = st.button("Hide animation")
+            hide = st.button("Hide animation") # clicking the button will re-render the page and therefore remove the animation
         y_phase_i = y_phase
         progress_value = 0.0
         progress_bar = st.progress(progress_value) # to show progress bar
