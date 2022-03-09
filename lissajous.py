@@ -34,16 +34,25 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
         col1, col2 = st.columns(2)
         with col1:
             show = st.button("Show animation")
+            animation_speed_factor = st.number_input(
+                label='Set the speed of animation',
+                value=1,
+                min_value=1,
+                max_value=10,
+                step=1,
+                help='The higher value, the quicker animation'
+            )
         with col2:
             hide = st.button("Hide animation")
 
     if show:
         y_phase_i = y_phase
-        progress_value = 0.00
+        progress_value = 0.0
         progress_bar = st.progress(progress_value) # to show progress bar
         lissajous_container = st.empty()
-        period = (2 * np.pi) // math.gcd(x_freq, y_freq) # period of the lissajous curve is a period of animation
-        step = 0.01 * period # step of phase changing in animation
+        period = (2 * np.pi) / math.gcd(x_freq, y_freq) # period of the lissajous curve is a period of animation
+        factor = 0.001 * animation_speed_factor # this var is related to the speed of the animation
+        step = factor * period # step of phase changing in animation
         while y_phase_i < (y_phase + period):
             progress_bar.progress(progress_value)
             with lissajous_container:
@@ -51,4 +60,4 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
                 st.pyplot(fig)
                 close_matplotlib_figure(fig)
             y_phase_i += step
-            progress_value += 0.01
+            progress_value = round(progress_value + factor, 3)
