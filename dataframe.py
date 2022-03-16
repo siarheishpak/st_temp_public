@@ -536,7 +536,7 @@ for i in range(10000):
             "plate": fake.license_plate(),
             "credit card": fake.credit_card_number(),
             "Time zone": fake.timezone(),
-            "image": f"{fake.image_url((width=200, height=200)}",
+            "image": f"{fake.image_url(width=200, height=200)}",
             "domain": fake.domain_name(),
             "mac": fake.mac_address(),
             "uri": fake.uri(),
