@@ -6,6 +6,7 @@ import pyarrow as pa
 import random
 from string import ascii_uppercase, ascii_lowercase, digits
 import datetime
+from faker import Faker
 
 st.markdown('''### Data source''')
 
@@ -509,3 +510,33 @@ df_pivot_2 = pd.pivot_table(df, values="D", index=["B"], columns=["A", "C"], agg
 st.dataframe(df_pivot_2)
 df_pivot_3 = pd.pivot_table(df, values=["D","E"], index=["B"], columns=["A", "C"], aggfunc=np.sum)
 st.dataframe(df_pivot_3)
+
+
+
+st.markdown('''### Large table''')
+fake = Faker()
+fake.seed(123)
+data_fake = []
+for i in range(10000):
+    profile = fake.profile()
+    data_fake.append(
+        {
+            "name": profile["name"],
+            "username": profile["username"],
+            "phone": fake.phone_number(),
+            "sex": profile["sex"],
+            "address": profile["address"],
+            "email": profile["mail"],
+            "DOB": profile["birthday"],
+            "location": profile["current_location"],
+            "job": profile["job"],
+            "company": profile["company"],
+            "ssn": profile["ssn"],
+            "plate": fake.license_plate(),
+            "credit card": fake.credit_card_number(),
+            "Time zone": fake.timezone()
+
+        }
+    )
+df_fake = pd.DataFrame(data_fake)
+st.dataframe(df_fake)
