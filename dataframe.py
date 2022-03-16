@@ -522,7 +522,7 @@ for i in range(10000):
     data_fake.append(
         {
             "first name": fake.first_name(),
-            "last name": fake.last_name()",
+            "last name": fake.last_name(),
             "real name": profile["name"],
             "username": profile["username"],
             "phone": fake.phone_number(),
