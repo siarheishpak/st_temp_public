@@ -515,7 +515,7 @@ st.dataframe(df_pivot_3)
 
 st.markdown('''### Large table''')
 fake = Faker()
-fake.seed(123)
+Faker.seed(123)
 data_fake = []
 for i in range(10000):
     profile = fake.profile()
