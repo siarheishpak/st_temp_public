@@ -521,21 +521,26 @@ for i in range(10000):
     profile = fake.profile()
     data_fake.append(
         {
-            "name": profile["name"],
+            "first name": fake.first_name(),
+            "last name": fake.last_name()",
+            "real name": profile["name"],
             "username": profile["username"],
             "phone": fake.phone_number(),
             "sex": profile["sex"],
             "address": profile["address"],
             "email": profile["mail"],
             "DOB": profile["birthdate"],
-            "location": profile["current_location"],
             "job": profile["job"],
             "company": profile["company"],
             "ssn": profile["ssn"],
             "plate": fake.license_plate(),
             "credit card": fake.credit_card_number(),
             "Time zone": fake.timezone(),
-            "kitty": f"{fake.image_url((width=200, height=200)}"
+            "image": f"{fake.image_url((width=200, height=200)}",
+            "domain": fake.domain_name(),
+            "mac": fake.mac_address(),
+            "uri": fake.uri(),
+
         }
     )
 df_fake = pd.DataFrame(data_fake)
