@@ -535,7 +535,7 @@ for i in range(10000):
             "plate": fake.license_plate(),
             "credit card": fake.credit_card_number(),
             "Time zone": fake.timezone(),
-            "kitty": f"{fake.image_url()}"
+            "kitty": f"{fake.image_url((width=200, height=200)}"
         }
     )
 df_fake = pd.DataFrame(data_fake)
