@@ -527,7 +527,7 @@ for i in range(10000):
             "sex": profile["sex"],
             "address": profile["address"],
             "email": profile["mail"],
-            "DOB": profile["birthday"],
+            "DOB": profile["birthdate"],
             "location": profile["current_location"],
             "job": profile["job"],
             "company": profile["company"],
