@@ -9,6 +9,7 @@ def show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase):
     x = x_amp * np.sin(x_freq * t + x_phase)
     y = y_amp * np.sin(y_freq * t + y_phase)
     fig, ax = plt.subplots()
+    plt.grid(color = 'green', linestyle = '--', linewidth = 0.5)
     ax.plot(x, y, 'b-') # 'b-' means solid blue line
     ax.axis('equal') # equal axis aspect ratio
     return fig
