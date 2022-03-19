@@ -64,15 +64,13 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
             progress_value = round(progress_value + factor, 3)
 
 
-if st.checkbox('line_chart'):
-    t =  np.arange(0.00, 2*np.pi, 0.01)
-    x = x_amp * np.sin(x_freq * t + x_phase)
-    y = y_amp * np.sin(y_freq * t + y_phase)
-    '''
-    for i in range(len(t)):
-        x.append(x_amp * np.sin(x_freq * t[i] + x_phase))
-        y.append(y_amp * np.sin(y_freq * t[i] + y_phase))
-    '''
-    df = pd.DataFrame(y, index=x)
-    df
-    st.line_chart(df)
+#if st.checkbox('line_chart'):
+#    t =  np.arange(0.00, 2*np.pi, 0.01)
+#    x = x_amp * np.sin(x_freq * t + x_phase)
+#    y = y_amp * np.sin(y_freq * t + y_phase)
+#    for i in range(len(t)):
+#        x.append(x_amp * np.sin(x_freq * t[i] + x_phase))
+#        y.append(y_amp * np.sin(y_freq * t[i] + y_phase))
+#    df = pd.DataFrame(y, index=x)
+#    df
+#    st.line_chart(df)
