@@ -64,7 +64,7 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
             progress_value = round(progress_value + factor, 3)
 
 
-if checkbox('line_chart'):
+if st.checkbox('line_chart'):
     t =  np.arange(0.00, 2*np.pi, 0.01)
     x = []
     y = []
