@@ -12,7 +12,7 @@ def show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase):
     plt.grid(color = '#003300', linestyle = '--', linewidth = 0.25)
     ax.plot(x, y, color='#ffffff', linestyle='solid')
     ax.axis('equal') # equal axis aspect ratio
-    ax.set_facecolor('#99e600')
+    ax.set_facecolor('#ace600')
     return fig
 
 def close_matplotlib_figure(fig):
