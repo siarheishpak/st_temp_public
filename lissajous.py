@@ -74,4 +74,5 @@ if st.checkbox('line_chart'):
         y.append(y_amp * np.sin(y_freq * t[i] + y_phase))
     '''
     df = pd.DataFrame(y, index=x)
+    df
     st.line_chart(df)
