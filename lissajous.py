@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 import math
+import pandas as pd
 
 def show_lissajous(x_amp, y_amp, x_freq, y_freq, x_phase, y_phase):
     t =  np.arange(0.00, 2*np.pi, 0.01)
@@ -61,3 +62,14 @@ if st.sidebar.checkbox(label="Show Lissajous Curve", value=True): # Lissajous Cu
                 close_matplotlib_figure(fig)
             y_phase_i += step
             progress_value = round(progress_value + factor, 3)
+
+
+if checkbox('line_chart'):
+    t =  np.arange(0.00, 2*np.pi, 0.01)
+    x = []
+    y = []
+    for i in range(len(t)):
+        x.append(x_amp * np.sin(x_freq * t + x_phase))
+        y.append(y_amp * np.sin(y_freq * t + y_phase))
+    df = pd.DataFrame(y, index=x)
+    st.line_chart(df)
